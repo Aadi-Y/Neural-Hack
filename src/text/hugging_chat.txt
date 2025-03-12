@@ -1,0 +1,5 @@
+(Stack-Based Approach)
+Use a stack to store opening brackets ({[.
+When encountering a closing bracket )}], check:
+Stack is not empty.
+Top of the sta

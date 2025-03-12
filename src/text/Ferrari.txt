@@ -1,0 +1,4 @@
+ (Using Slope Counting)
+Iterate through each point as an anchor.
+Use a hashmap to store slope counts (dy/dx) relative to the anchor.
+Conv

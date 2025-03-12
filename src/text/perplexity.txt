@@ -1,0 +1,6 @@
+ck matches the current closing bracket.
+If matched, pop the stack; otherwise, return False.
+At the end, return True if the stack is empty.
+
+        
+Input: '()[]{}' Output: True

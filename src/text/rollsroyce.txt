@@ -1,0 +1,6 @@
+ert the slope to its reduced fraction for accuracy.
+Track the maximum count of collinear points.
+Return the highest count found.
+
+        
+Input: [[1,1],[2,2],[3,3]] Output: 3
