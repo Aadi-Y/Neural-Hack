@@ -1,0 +1,6 @@
+at even indices to even_sum.
+Add digits at odd indices to odd_sum.
+Return True if even_sum == odd_sum, else False.
+
+        
+Input: '1254' Output: True

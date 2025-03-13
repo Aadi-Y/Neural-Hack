@@ -1,0 +1,2 @@
+at even indices is equal to the sum of digits at odd indices.
+Return true if num is balanced, otherwise return false.

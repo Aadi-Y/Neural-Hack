@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import File1 from "../text/hodge.txt";
 import File2 from "../text/lara.txt";
 import File3 from "../text/richards.txt";
@@ -11,45 +11,61 @@ import File9 from "../text/beacons.txt";
 import File10 from "../text/blackbox.txt";
 import File11 from "../text/hugging_chat.txt";
 import File12 from "../text/perplexity.txt";
+import File13 from "../text/Burger.txt";
+import File14 from "../text/Dosa.txt";
+import File15 from "../text/Pizza.txt";
+import File16 from "../text/poori.txt";
+import File17 from "../text/maldini.txt";
+import File18 from "../text/muller.txt";
+import File19 from "../text/pele.txt";
+import File20 from "../text/puskas.txt";
 
+const sheetURL = "https://docs.google.com/spreadsheets/d/1Hs81MpD5skff2KJccLVs4EQaXhql4SvX-wM7DmL0X24";
 
 const StoringText = () => {
-  // List of text files grouped under "Problem 1"
   const textFiles = {
-    "Problem 1": [
+    "Problem 1 (Medium)": [
       { name: "Hodge", path: File1 },
       { name: "Lara", path: File2 },
       { name: "Richards", path: File3 },
       { name: "Sreeshanth", path: File4 },
     ],
-    "Problem 2": [
+    "Problem 2 (Hard)": [
       { name: "Cupra", path: File5 },
       { name: "DS", path: File6 },
       { name: "Ferrari", path: File7 },
       { name: "Rollsroyce", path: File8 },
     ],
-    "Problem 3": [
+    "Problem 3 (Easy)": [
       { name: "Beacons", path: File9 },
       { name: "Blackbox", path: File10 },
       { name: "Hugging Chat", path: File11 },
       { name: "Perplexity", path: File12 },
     ],
+    "Problem 4 (Easy)": [
+      { name: "Burger", path: File13 },
+      { name: "Dosa", path: File14 },
+      { name: "Pizza", path: File15 },
+      { name: "poori", path: File16 },
+    ],
+    "Problem 5 (Easy)": [
+      { name: "Maldini", path: File17 },
+      { name: "Muller", path: File18 },
+      { name: "Pele", path: File19 },
+      { name: "Puskas", path: File20 },
+    ],
   };
 
-  // Function to trigger "Save As" option
   const saveAsFile = async (file) => {
     try {
-      // Fetch the file content
       const response = await fetch(file.path);
       const textData = await response.text();
 
-      // Show "Save As" dialog
       const handle = await window.showSaveFilePicker({
         suggestedName: file.name + ".txt",
         types: [{ description: "Text File", accept: { "text/plain": [".txt"] } }],
       });
 
-      // Write to file
       const writable = await handle.createWritable();
       await writable.write(textData);
       await writable.close();
@@ -65,7 +81,6 @@ const StoringText = () => {
     <div style={{ textAlign: "center", padding: "30px", fontFamily: "Arial, sans-serif" }}>
       <h2 style={{ color: "#2c3e50", marginBottom: "20px" }}>📄 Download & Save Text Files</h2>
 
-      {/* Iterate over problems and their files */}
       {Object.entries(textFiles).map(([problemTitle, files]) => (
         <div key={problemTitle} style={{ marginBottom: "20px" }}>
           <h3 style={{ textAlign: "left", maxWidth: "400px", margin: "10px auto", color: "#333" }}>
@@ -109,6 +124,9 @@ const StoringText = () => {
           </ul>
         </div>
       ))}
+
+      <h2 style={{ color: "#2c3e50", marginTop: "40px" }}>📊 Google Sheets Data</h2>
+      <p><a href={sheetURL} target="_blank" rel="noopener noreferrer">📂 View Google Sheet</a></p>
     </div>
   );
 };

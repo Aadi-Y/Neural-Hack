@@ -1,0 +1,4 @@
+
+        (Sorting Approach)
+Sort the given array of strings.
+Compare the first and last

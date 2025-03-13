@@ -1,0 +1,4 @@
+(Sum of Odd Indices = Sum of Even Indices)
+Initialize even_sum = 0 and odd_sum = 0.
+Iterate through the string:
+Add digits 

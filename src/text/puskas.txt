@@ -1,0 +1,4 @@
+ strings character by character.
+The common prefix between them is the result.
+        
+Input: ['flower','flow','flight'] Output: 'fl'
